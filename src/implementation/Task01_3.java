@@ -9,13 +9,7 @@ package implementation;
 public class Task01_3 {
 
     private double rectangularInitialSquare;
-
-    public static void main(String[] args) {
-        Task01_3 task01_3 = new Task01_3(100);
-        double result = task01_3.calculate();
-        System.out.println(result);
-    }
-
+    
     public Task01_3(double rectangularInitialSquare) {
         this.rectangularInitialSquare = rectangularInitialSquare;
     }
