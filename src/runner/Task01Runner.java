@@ -4,6 +4,7 @@ import abstraction.AbstractConsoleInput;
 import implementation.Task01_1;
 import implementation.Task01_2;
 import implementation.Task01_3;
+import implementation.Task01_4;
 
 public class Task01Runner extends AbstractConsoleInput {
     public static void main(String[] args) {
@@ -13,6 +14,8 @@ public class Task01Runner extends AbstractConsoleInput {
         runTask01_2();
 
         runTask01_3();
+
+        runTask01_4();
 
 
     }
@@ -43,6 +46,19 @@ public class Task01Runner extends AbstractConsoleInput {
         Task01_3 task3 = new Task01_3(outerRectangularSquare);
         double task3Result = task3.calculate();
         System.out.println(String.format("Task 3: result = %.3f \n", task3Result));
+    }
+
+    public static void runTask01_4() {
+        System.out.println(String.format("Task 4: Started..."));
+        System.out.println("Enter 4 integer values and check - are there at list 2 or more even values. True - has 2 and more even values.");
+        int size = 4;
+        int[] intArray = new int[size];
+        for (int i = size - 1; i >= 0; i--) {
+            intArray[i] = enterInteger("incoming value");
+        }
+        Task01_4 task4 = new Task01_4(intArray);
+        boolean task4Result = task4.calculate();
+        System.out.println(String.format("Task 4: result = %b \n", task4Result));
     }
 
 
