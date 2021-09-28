@@ -16,6 +16,8 @@ public class Task01Runner extends AbstractConsoleInput {
 
         runTask01_5();
 
+        close();
+
     }
 
     public static void runTask01_1() {
