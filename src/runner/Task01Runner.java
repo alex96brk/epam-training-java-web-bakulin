@@ -1,10 +1,7 @@
 package runner;
 
 import abstraction.AbstractConsoleInput;
-import implementation.Task01_1;
-import implementation.Task01_2;
-import implementation.Task01_3;
-import implementation.Task01_4;
+import implementation.*;
 
 public class Task01Runner extends AbstractConsoleInput {
     public static void main(String[] args) {
@@ -16,6 +13,8 @@ public class Task01Runner extends AbstractConsoleInput {
         runTask01_3();
 
         runTask01_4();
+
+        runTask01_5();
 
 
     }
@@ -59,6 +58,15 @@ public class Task01Runner extends AbstractConsoleInput {
         Task01_4 task4 = new Task01_4(intArray);
         boolean task4Result = task4.calculate();
         System.out.println(String.format("Task 4: result = %b \n", task4Result));
+    }
+
+    public static void runTask01_5() {
+        System.out.println(String.format("Task 5: Started..."));
+        System.out.println("Enter 1 integer value to check it: does it belongs to perfect set of numbers; True - positive result, False - negative result;");
+        int value = enterInteger("value");
+        Task01_5 task4 = new Task01_5(value);
+        boolean task4Result = task4.calculate();
+        System.out.println(String.format("Task 5: result = %b \n", task4Result));
     }
 
 
