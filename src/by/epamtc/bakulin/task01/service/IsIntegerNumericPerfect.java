@@ -1,14 +1,33 @@
-package implementation;
+package by.epamtc.bakulin.task01.service;
 
-public class Task01_5 {
+public class IsIntegerNumericPerfect {
     /*
+     * Задача:
      * 5. Составить программу, печатающую значение true, если указанное высказывание является истинным,
      *  и false — в противном случае: является ли целое число совершенным (сумма делителей равна самому числу).
      * */
 
-    private int incomingValue;
 
-    public Task01_5(int incomingValue) {
+    public static boolean isIntegerNumericPerfect(int incomingValue) {
+        int sum = 0;
+        boolean isPerfect = false;
+
+        for (int i = 1; i < incomingValue; i++) {
+            if (incomingValue % i == 0) {
+                sum += i;
+            }
+        }
+        if(sum == incomingValue) {
+            isPerfect = true;
+        }
+        return isPerfect;
+    }
+}
+
+/*
+*    private int incomingValue;
+
+    public IsIntegerNumericPerfect(int incomingValue) {
         this.incomingValue = incomingValue;
     }
 
@@ -27,6 +46,4 @@ public class Task01_5 {
         }
         return false;
     }
-
-
-}
+* */

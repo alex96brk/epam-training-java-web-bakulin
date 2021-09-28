@@ -1,32 +1,24 @@
-package implementation;
+package by.epamtc.bakulin.task01.service;
 
-import abstraction.AbstractConsoleInput;
-
-public class Task01_2 {
+public class CalculateDaysAtLeapYearMonth {
 
     /*
+     * Задача:
      * 2. Составить программу, которая по заданным году и номеру месяца определяет количество дней в этом месяце
      *    и корректно определялись все високосные года.
-     *
      * */
-
-    private int year;
-    private int month;
 
     private static final int[] plainMonthArray = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     private static final int[] leapMonthArray = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-    public Task01_2(int year, int month) {
-        this.year = year;
-        this.month = month;
-    }
+    public static int calculateDaysAtLeapYearMonth(int year, int month) {
+        int result = plainMonthArray[month - 1];
 
-    public int calculate() {
-        boolean isLeapYear = isLeapYear(this.year);
-        if(isLeapYear) {
-            return leapMonthArray[this.month - 1];
+        boolean isLeapYear = isLeapYear(year);
+        if (isLeapYear) {
+            result = leapMonthArray[month - 1];
         }
-        return plainMonthArray[this.month - 1];
+        return result;
     }
 
     private static boolean isLeapYear(int incomingYear) {
@@ -38,3 +30,4 @@ public class Task01_2 {
 
 
 }
+
