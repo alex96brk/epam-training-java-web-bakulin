@@ -61,6 +61,10 @@ public abstract class AbstractConsoleInput {
         return inputValue;
     }
 
+    public static void close() {
+        sc.close();
+    }
+
     private static void printConsoleMessage(String message, String variableParameterName) {
         System.out.print(String.format(message, variableParameterName));
     }

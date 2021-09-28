@@ -16,6 +16,7 @@ public class Task01Runner extends AbstractConsoleInput {
 
         runTask01_5();
 
+        close();
 
     }
 
@@ -26,6 +27,7 @@ public class Task01Runner extends AbstractConsoleInput {
         Task01_1 task1 = new Task01_1(x);
         int task1Result = task1.calculate();
         System.out.println(String.format("Task 1: result = %d \n", task1Result));
+
     }
 
     public static void runTask01_2() {
@@ -36,6 +38,7 @@ public class Task01Runner extends AbstractConsoleInput {
         Task01_2 task2 = new Task01_2(year, month);
         int task2Result = task2.calculate();
         System.out.println(String.format("Task 2: result = %d \n", task2Result));
+
     }
 
     public static void runTask01_3() {
@@ -45,6 +48,7 @@ public class Task01Runner extends AbstractConsoleInput {
         Task01_3 task3 = new Task01_3(outerRectangularSquare);
         double task3Result = task3.calculate();
         System.out.println(String.format("Task 3: result = %.3f \n", task3Result));
+
     }
 
     public static void runTask01_4() {
@@ -58,6 +62,7 @@ public class Task01Runner extends AbstractConsoleInput {
         Task01_4 task4 = new Task01_4(intArray);
         boolean task4Result = task4.calculate();
         System.out.println(String.format("Task 4: result = %b \n", task4Result));
+
     }
 
     public static void runTask01_5() {
@@ -67,6 +72,7 @@ public class Task01Runner extends AbstractConsoleInput {
         Task01_5 task4 = new Task01_5(value);
         boolean task4Result = task4.calculate();
         System.out.println(String.format("Task 5: result = %b \n", task4Result));
+
     }
 
 
