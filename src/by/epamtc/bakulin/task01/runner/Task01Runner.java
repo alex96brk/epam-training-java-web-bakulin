@@ -1,20 +1,23 @@
 package by.epamtc.bakulin.task01.runner;
 
+import by.epamtc.bakulin.task01.entity.PlainTime;
 import by.epamtc.bakulin.task01.service.*;
 import by.epamtc.bakulin.task01.view.AbstractConsoleInput;
 
 public class Task01Runner extends AbstractConsoleInput {
 
     public static void main(String[] args) {
-        runTask01_1();
+//        runTask01_1();
+//
+//        runTask01_2();
+//
+//        runTask01_3();
+//
+//        runTask01_4();
+//
+//        runTask01_5();
 
-        runTask01_2();
-
-        runTask01_3();
-
-        runTask01_4();
-
-        runTask01_5();
+        runTask01_6();
 
         close();
 
@@ -59,6 +62,14 @@ public class Task01Runner extends AbstractConsoleInput {
         int userValue = enterInteger("userValue");
         boolean isPerfect = IsIntegerNumericPerfect.isIntegerNumericPerfect(userValue);
         printConsoleMessage(String.format("Task 5: result = %b \n", isPerfect));
+    }
+
+    public static void runTask01_6() {
+        printConsoleMessage("Task 6: Started...");
+        printConsoleMessage("Enter 1 long value of seconds to convert it to HH:MM:SS format, where HH - hours, MM - minutes, SS - seconds");
+        long userValue = enterLong("userValue");
+        PlainTime time = CalculateCurrentTime.convertSeconds(userValue);
+        printConsoleMessage(String.format("Task 6: result HH:MM:SS = %s \n", time.toString()));
     }
 
 }

@@ -8,6 +8,7 @@ public abstract class AbstractConsoleInput {
 
     public static final String ERROR_INCORRECT_VALUE_ENTER = "\t[ERROR]: Incorrect value. Enter: ";
     public static final String ENTER_INTEGER = "\t[enter integer]: %s = ";
+    public static final String ENTER_LONG = "\t[enter long]: %s = ";
     public static final String ENTER_DOUBLE = "\t[enter double]: %s = ";
     public static final String ENTER_STRING = "\t[enter string]: %s = ";
 
@@ -23,6 +24,23 @@ public abstract class AbstractConsoleInput {
                 sc.next();
             }
             inputValue = sc.nextInt();
+
+        } while (inputValue == null);
+        return inputValue;
+    }
+
+    public static long enterLong(String parameterName) {
+        Long inputValue = null;
+        printConsoleMessage(ENTER_LONG, parameterName);
+
+        do {
+            while (!sc.hasNextInt()) {
+                printConsoleMessage(ERROR_INCORRECT_VALUE_ENTER + "long");
+                printConsoleMessage(String.format(ENTER_LONG, parameterName));
+
+                sc.next();
+            }
+            inputValue = sc.nextLong();
 
         } while (inputValue == null);
         return inputValue;
@@ -82,6 +100,10 @@ public abstract class AbstractConsoleInput {
     }
 
     public static void printConsoleMessage(int message) {
+        System.out.println(message + "");
+    }
+
+    public static void printConsoleMessage(long message) {
         System.out.println(message + "");
     }
 
