@@ -6,7 +6,7 @@ import by.epamtc.bakulin.task01.entity.PlainTime;
 public class ComparePointsLocation {
 
     /*
-    * 6. Даны две точки А(х1, у1) и В(х2, у2). Составить алгоритм, определяющий, которая из точек находится ближе к началу координат. x y.
+    * 7. Даны две точки А(х1, у1) и В(х2, у2). Составить алгоритм, определяющий, которая из точек находится ближе к началу координат. x y.
     * */
 
     public static PlainPoint comparePointsToCenter(PlainPoint center, PlainPoint firstPoint, PlainPoint secondPoint) {
