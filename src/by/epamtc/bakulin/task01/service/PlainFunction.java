@@ -2,7 +2,11 @@ package by.epamtc.bakulin.task01.service;
 
 import by.epamtc.bakulin.task01.view.AbstractConsoleInput;
 
-public class PlainFunction extends AbstractConsoleInput {
+public class PlainFunction {
+    /*
+    * Задача 8
+    *
+    * */
 
     public static double calculatePlainFunction(double incomingValue) {
         double result = incomingValue;
@@ -15,6 +19,10 @@ public class PlainFunction extends AbstractConsoleInput {
         }
         return result;
     }
+
+    /*
+    * Задача 10
+    * */
 
     public static double[] calculatePlainFunctionInRange(double[] argumentsRadians) {
         double[] functionValues = new double[argumentsRadians.length];
