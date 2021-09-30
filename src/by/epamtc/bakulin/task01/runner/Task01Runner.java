@@ -8,23 +8,25 @@ import by.epamtc.bakulin.task01.view.AbstractConsoleInput;
 public class Task01Runner extends AbstractConsoleInput {
 
     public static void main(String[] args) {
-//        runTask01_1();
-//
-//        runTask01_2();
-//
-//        runTask01_3();
-//
-//        runTask01_4();
-//
-//        runTask01_5();
+        runTask01_1();
 
-//        runTask01_6();
+        runTask01_2();
 
-//        runTask01_7();
+        runTask01_3();
 
-//        runTask01_8();
+        runTask01_4();
+
+        runTask01_5();
+
+        runTask01_6();
+
+        runTask01_7();
+
+        runTask01_8();
 
         runTask01_9();
+
+        runTask01_10();
 
         close();
 
@@ -117,6 +119,26 @@ public class Task01Runner extends AbstractConsoleInput {
         double circleSquare = PlainCircleUtils.calculateCircleSquare(radius);
         double circleCircumference = PlainCircleUtils.calculateСircumference(radius);
         printConsoleMessage(String.format("Task 8: \nsquare = %.3f \ncircumference = %.3f \n", circleSquare, circleCircumference));
+    }
+
+    public static void runTask01_10() {
+        printConsoleMessage("Task 10: Started...");
+        printConsoleMessage("Enter left and right border values and step(Radians) of populated array, to calculate fucntion f(x) = tg(x) on range");
+        double a = enterDouble("a");
+        double b = enterDouble("b");
+        double step = enterDouble("step");
+        double[] argumentsInRadians = populateDoubleArrayInRange(a,b,step);
+        double[] functionResults = PlainFunction.calculatePlainFunctionInRange(argumentsInRadians);
+        printTask10Array(argumentsInRadians, functionResults);
+        printConsoleMessage("Task 10: finished");
+    }
+
+    private static void printTask10Array(double[] arguments, double[] function) {
+        printConsoleMessage("Result Table:");
+        printConsoleMessage("\t  x          f(x)");
+        for (int i = 0; i < arguments.length; i++) {
+            printConsoleMessage(String.format("\t %.1f        %.3f", arguments[i], function[i]));
+        }
     }
 
 }

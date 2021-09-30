@@ -1,6 +1,8 @@
 package by.epamtc.bakulin.task01.service;
 
-public class PlainFunction {
+import by.epamtc.bakulin.task01.view.AbstractConsoleInput;
+
+public class PlainFunction extends AbstractConsoleInput {
 
     public static double calculatePlainFunction(double incomingValue) {
         double result = incomingValue;
@@ -13,4 +15,13 @@ public class PlainFunction {
         }
         return result;
     }
+
+    public static double[] calculatePlainFunctionInRange(double[] argumentsRadians) {
+        double[] functionValues = new double[argumentsRadians.length];
+        for(int i = 0; i < argumentsRadians.length; i++) {
+            functionValues[i] = Math.tan(argumentsRadians[i]);
+        }
+        return functionValues;
+    }
+
 }

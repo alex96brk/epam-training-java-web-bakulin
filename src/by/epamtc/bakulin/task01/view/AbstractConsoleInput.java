@@ -91,6 +91,17 @@ public abstract class AbstractConsoleInput {
         return ints;
     }
 
+    public static double[] populateDoubleArrayInRange(double leftBorder, double rightBorder, double step) {
+        double arrayLengthDouble = ((rightBorder - leftBorder) / step) + 1;
+        int arrayLength = (int)arrayLengthDouble;
+        double[] array = new double[(int)arrayLength];
+
+        for (int i = 0; i < arrayLength; i++, leftBorder = leftBorder + step) {
+            array[i] = leftBorder;
+        }
+        return array;
+    }
+
     public static void printConsoleMessage(String message, String variableParameterName) {
         System.out.print(String.format(message, variableParameterName));
     }
@@ -114,7 +125,6 @@ public abstract class AbstractConsoleInput {
     public static void close() {
         sc.close();
     }
-
 
 
 }
