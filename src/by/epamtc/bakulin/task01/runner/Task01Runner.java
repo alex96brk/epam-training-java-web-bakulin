@@ -1,5 +1,6 @@
 package by.epamtc.bakulin.task01.runner;
 
+import by.epamtc.bakulin.task01.entity.PlainPoint;
 import by.epamtc.bakulin.task01.entity.PlainTime;
 import by.epamtc.bakulin.task01.service.*;
 import by.epamtc.bakulin.task01.view.AbstractConsoleInput;
@@ -17,7 +18,9 @@ public class Task01Runner extends AbstractConsoleInput {
 //
 //        runTask01_5();
 
-        runTask01_6();
+//        runTask01_6();
+
+        runTask01_7();
 
         close();
 
@@ -70,6 +73,29 @@ public class Task01Runner extends AbstractConsoleInput {
         long userValue = enterLong("userValue");
         PlainTime time = CalculateCurrentTime.convertSeconds(userValue);
         printConsoleMessage(String.format("Task 6: result HH:MM:SS = %s \n", time.toString()));
+    }
+
+    public static void runTask01_7() {
+        printConsoleMessage("Task 7: Started...");
+        PlainPoint centerPoint = new PlainPoint("O", 0, 0);
+        printConsoleMessage(String.format("Enter coordinates A(x1; y1) B(x2; y2) to find out which point is closer to center of coordinates %s", centerPoint));
+
+
+        printConsoleMessage("Enter point A(x1;y1) coordinates:");
+        double xA = enterDouble("x(A)");
+        double yA = enterDouble("y(A)");
+        PlainPoint pointA = new PlainPoint("A", xA, yA);
+        printConsoleMessage(String.format("Point: %s \n", pointA));
+
+        printConsoleMessage("Enter point B(x2;y2) coordinates:");
+        double xB = enterDouble("x(B)");
+        double yB = enterDouble("y(B)");
+        PlainPoint pointB = new PlainPoint("A", xB, yB);
+        printConsoleMessage(String.format("Point: %s \n", pointB));
+
+        PlainPoint resultPoint = ComparePointsLocation.comparePointsToCenter(centerPoint, pointA, pointB);
+
+        printConsoleMessage(String.format("Task 7 result: %s closer to center %s \n", resultPoint, centerPoint));
     }
 
 }
