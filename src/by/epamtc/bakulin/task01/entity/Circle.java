@@ -10,6 +10,10 @@ public class Circle {
         this.circleSquare = circleSquare;
     }
 
+    public Circle() {
+
+    }
+
     public double getCircleDiameter() {
         double circleDiameter = Math.sqrt((4 * this.circleSquare) / Math.PI);
         return circleDiameter;

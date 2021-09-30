@@ -21,7 +21,10 @@ public class Task01Runner extends AbstractConsoleInput {
 //        runTask01_6();
 
 //        runTask01_7();
-        runTask01_8();
+
+//        runTask01_8();
+
+        runTask01_9();
 
         close();
 
@@ -48,7 +51,7 @@ public class Task01Runner extends AbstractConsoleInput {
         printConsoleMessage("Task 3: Started...");
         printConsoleMessage("Enter numeric double outer rectangular square, to calculate rectangle inscribed in a circle, which inscribed in first rectangular");
         double userOuterRectangleSquare = enterDouble("outer rectangle square");
-        double innerRectangleSquare = CalculateRectangleSquareInscribedInCircle.calculateRectangleSquareInCircle(userOuterRectangleSquare);
+        double innerRectangleSquare = PlainCircleUtils.calculateRectangleSquareInCircle(userOuterRectangleSquare);
         printConsoleMessage(String.format("Task 3: result = %.3f \n", innerRectangleSquare));
     }
 
@@ -105,6 +108,15 @@ public class Task01Runner extends AbstractConsoleInput {
         double userValue = enterDouble("userValue");
         double result = PlainFunction.calculatePlainFunction(userValue);
         printConsoleMessage(String.format("Task 8: f(%.3f) = %.3f \n", userValue, result));
+    }
+
+    public static void runTask01_9() {
+        printConsoleMessage("Task 8: Started...");
+        printConsoleMessage("Enter circle radius to calculate its square and circumference");
+        double radius = enterDouble("radius");
+        double circleSquare = PlainCircleUtils.calculateCircleSquare(radius);
+        double circleCircumference = PlainCircleUtils.calculateСircumference(radius);
+        printConsoleMessage(String.format("Task 8: \nsquare = %.3f \ncircumference = %.3f \n", circleSquare, circleCircumference));
     }
 
 }
