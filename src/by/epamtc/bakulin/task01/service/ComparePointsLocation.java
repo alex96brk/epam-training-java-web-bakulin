@@ -1,7 +1,6 @@
 package by.epamtc.bakulin.task01.service;
 
 import by.epamtc.bakulin.task01.entity.PlainPoint;
-import by.epamtc.bakulin.task01.entity.PlainTime;
 
 public class ComparePointsLocation {
 

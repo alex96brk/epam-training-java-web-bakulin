@@ -20,7 +20,8 @@ public class Task01Runner extends AbstractConsoleInput {
 
 //        runTask01_6();
 
-        runTask01_7();
+//        runTask01_7();
+        runTask01_8();
 
         close();
 
@@ -96,6 +97,14 @@ public class Task01Runner extends AbstractConsoleInput {
         PlainPoint resultPoint = ComparePointsLocation.comparePointsToCenter(centerPoint, pointA, pointB);
 
         printConsoleMessage(String.format("Task 7 result: %s closer to center %s \n", resultPoint, centerPoint));
+    }
+
+    public static void runTask01_8() {
+        printConsoleMessage("Task 8: Started...");
+        printConsoleMessage("Enter 1 value to calculate function: \nif value >= 3 -> f(value) = -x^2 + 3x + 9 \nif value < 3 -> 1 / (x^3 -6)");
+        double userValue = enterDouble("userValue");
+        double result = PlainFunction.calculatePlainFunction(userValue);
+        printConsoleMessage(String.format("Task 8: f(%.3f) = %.3f \n", userValue, result));
     }
 
 }
