@@ -1,6 +1,7 @@
 package by.epamtc.bakulin.task02.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class PlainBall implements Serializable {
 
@@ -40,6 +41,19 @@ public class PlainBall implements Serializable {
 
     public void setBallColor(String ballColor) {
         this.ballColor = ballColor;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof PlainBall)) return false;
+        PlainBall plainBall = (PlainBall) o;
+        return Double.compare(plainBall.ballDiameter, ballDiameter) == 0 && Double.compare(plainBall.ballWeight, ballWeight) == 0 && Objects.equals(ballColor, plainBall.ballColor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ballColor, ballDiameter, ballWeight);
     }
 
     private static double calculateBallWeight(double ballDiameter, double ballWallThickness, double ballDensity) {
