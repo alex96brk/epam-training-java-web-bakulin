@@ -1,4 +1,4 @@
-package by.epamtc.bakulin.task02.entity;
+package by.epamtc.bakulin.task02.enums;
 
 import java.io.Serializable;
 
