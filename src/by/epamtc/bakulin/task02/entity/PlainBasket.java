@@ -2,6 +2,7 @@ package by.epamtc.bakulin.task02.entity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class PlainBasket implements Serializable {
@@ -22,6 +23,19 @@ public class PlainBasket implements Serializable {
         if (ball != null) {
             this.basket.add(ball);
             this.basketWeight += ball.getBallWeight();
+            result = true;
+        }
+        return result;
+    }
+
+    public boolean putBallsArray(List<PlainBall> balls) {
+        boolean result = false;
+
+        if(balls != null) {
+            this.basket.addAll(balls);
+            for(PlainBall currentBall: balls) {
+                this.basketWeight += currentBall.getBallWeight();
+            }
             result = true;
         }
         return result;
