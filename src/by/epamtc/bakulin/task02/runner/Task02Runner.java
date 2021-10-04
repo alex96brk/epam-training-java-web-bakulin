@@ -10,6 +10,7 @@ import java.util.List;
 public class Task02Runner extends AbstractConsoleInput {
     public static void main(String[] args) {
         printConsoleMessage("Task02: Started...");
+        printConsoleMessage("[TASK]: Создать класс Мяч. Создать класс Корзина. Наполнить корзину мячами. Определить вес мячей в корзине и кол-во синих мячей");
         List<PlainBall> balls = List.of(
                 new PlainBall(Color.RED.getColorName(), 0.25),
                 new PlainBall(Color.BLUE.getColorName(), 0.25),
