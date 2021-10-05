@@ -32,7 +32,7 @@ public class Task02Runner extends AbstractConsoleInput {
         printConsoleMessage("[Get basket content]: Finished\n");
 
         //[Comment]: Get Basket Weight
-        double basketWeight = basket.getBasketWeight();
+        double basketWeight = basket.calculateBasketWeight();
         printConsoleMessage("[Get basket weight]: Started");
         printConsoleMessage(String.format("\t basketWeight = %.3f", basketWeight));
         printConsoleMessage("[Get basket weight]: Finished\n");
