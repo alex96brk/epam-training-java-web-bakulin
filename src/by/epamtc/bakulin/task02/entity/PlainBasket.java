@@ -47,6 +47,8 @@ public class PlainBasket implements Serializable {
     }
 
     public PlainBall removeBall(int index) {
+        this.basket.remove(index);
+        this.basketWeight -= basket.get(index).getBallWeight();
         return this.basket.remove(index);
     }
 
