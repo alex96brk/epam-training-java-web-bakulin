@@ -24,7 +24,7 @@ public class PlainFunction {
     * Задача 10
     * */
 
-    public static double[] calculatePlainFunctionInRange(double[] argumentsRadians) {
+    public static double[] calculateTanArguments(double[] argumentsRadians) {
         double[] functionValues = new double[argumentsRadians.length];
         for(int i = 0; i < argumentsRadians.length; i++) {
             functionValues[i] = Math.tan(argumentsRadians[i]);

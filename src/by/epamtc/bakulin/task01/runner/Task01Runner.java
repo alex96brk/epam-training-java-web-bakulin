@@ -128,7 +128,7 @@ public class Task01Runner extends AbstractConsoleInput {
         double b = enterDouble("b");
         double step = enterDouble("step");
         double[] argumentsInRadians = populateDoubleArrayInRange(a,b,step);
-        double[] functionResults = PlainFunction.calculatePlainFunctionInRange(argumentsInRadians);
+        double[] functionResults = PlainFunction.calculateTanArguments(argumentsInRadians);
         printTask10Array(argumentsInRadians, functionResults);
         printConsoleMessage("Task 10: finished");
     }
