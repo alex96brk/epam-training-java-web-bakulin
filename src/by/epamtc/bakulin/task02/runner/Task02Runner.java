@@ -20,7 +20,7 @@ public class Task02Runner extends AbstractConsoleInput {
                 new PlainBall(Color.YELLOW.getColorName(), 0.25));
 
         PlainBasket basket = new PlainBasket();
-        basket.putBallsArray(balls);
+        basket.putBallsCollection(balls);
         basket.putBall(new PlainBall(Color.GREEN.getColorName(), 0.25));
 
         //[Comment]: Get All Balls In A Basket

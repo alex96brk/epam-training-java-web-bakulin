@@ -14,17 +14,15 @@ public class PlainBall implements Serializable {
 
     private String ballColor;
     private double ballDiameter;
-    private double ballWeight;
 
     public PlainBall(String ballColor, double ballDiameter) {
         this.ballColor = ballColor;
         this.ballDiameter = ballDiameter;
-        this.ballWeight = calculateBallWeight(ballDiameter, BALL_DEFAULT_WALL_THICKNESS , BALL_DEFAULT_DENSITY);
     }
 
     @Override
     public String toString() {
-        return String.format("PlainBall{ ballColor = %s, ballDiameter = %.3f(m), ballWeight = %.3f(kg)}", ballColor, ballDiameter, ballWeight);
+        return String.format("PlainBall{ ballColor = %s, ballDiameter = %.3f(m), ballWeight = %.3f(kg)}", ballColor, ballDiameter, this.calculateBallWeight(this.ballDiameter, BALL_DEFAULT_WALL_THICKNESS, BALL_DEFAULT_DENSITY));
     }
 
     public String getBallColor() {
@@ -33,10 +31,6 @@ public class PlainBall implements Serializable {
 
     public double getBallDiameter() {
         return ballDiameter;
-    }
-
-    public double getBallWeight() {
-        return ballWeight;
     }
 
     public void setBallColor(String ballColor) {
@@ -48,15 +42,23 @@ public class PlainBall implements Serializable {
         if (this == o) return true;
         if (!(o instanceof PlainBall)) return false;
         PlainBall plainBall = (PlainBall) o;
-        return Double.compare(plainBall.ballDiameter, ballDiameter) == 0 && Double.compare(plainBall.ballWeight, ballWeight) == 0 && Objects.equals(ballColor, plainBall.ballColor);
+        return Double.compare(plainBall.ballDiameter, ballDiameter) == 0 && Objects.equals(ballColor, plainBall.ballColor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ballColor, ballDiameter, ballWeight);
+        return Objects.hash(ballColor, ballDiameter);
     }
 
-    private static double calculateBallWeight(double ballDiameter, double ballWallThickness, double ballDensity) {
+    public double getBallWeight() {
+        double ballSphereVolume = Math.PI * Math.pow(this.ballDiameter, 3) * (1.0 / 6);
+        double ballCavityVolume = Math.PI * Math.pow(this.ballDiameter - 2 * BALL_DEFAULT_WALL_THICKNESS, 3) * (1.0 / 6);
+        double ballVolume = ballSphereVolume - ballCavityVolume;
+
+        return BALL_DEFAULT_DENSITY * ballVolume;
+    }
+
+    public static double calculateBallWeight(double ballDiameter, double ballWallThickness, double ballDensity) {
         double ballSphereVolume = Math.PI * Math.pow(ballDiameter, 3) * (1.0 / 6);
         double ballCavityVolume = Math.PI * Math.pow(ballDiameter - 2 * ballWallThickness, 3) * (1.0 / 6);
         double ballVolume = ballSphereVolume - ballCavityVolume;

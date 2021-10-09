@@ -11,6 +11,9 @@ public class PlainBasket implements Serializable {
     public List<PlainBall> getBasketContent() {
         return this.basket;
     }
+    public PlainBall getBall(int index) {
+        return this.basket.get(index);
+    }
 
     public static double calculateBallsWeight(List<PlainBall> balls) {
         double totalWeight = 0;
@@ -34,7 +37,7 @@ public class PlainBasket implements Serializable {
         return result;
     }
 
-    public boolean putBallsArray(List<PlainBall> balls) {
+    public boolean putBallsCollection(List<PlainBall> balls) {
         boolean result = false;
 
         if(balls != null) {
@@ -44,23 +47,18 @@ public class PlainBasket implements Serializable {
         return result;
     }
 
-
-    public PlainBall getBall(int index) {
-        return this.basket.get(index);
-    }
-
     public PlainBall removeBall(PlainBall ballToRemove) {
         this.basket.remove(ballToRemove);
         return ballToRemove;
     }
 
-    public List<PlainBall> findBallsByColor(String searchingColor) {
+    public List<PlainBall> findBallsByColor(String searchColorParameter) {
         List<PlainBall> ballsSortedByColor = new ArrayList<>();
 
         for(int i = 0; i < this.basket.size(); i++) {
             PlainBall currentBall = getBall(i);
 
-            if(currentBall.getBallColor().equalsIgnoreCase(searchingColor)) {
+            if(currentBall.getBallColor().equalsIgnoreCase(searchColorParameter)) {
                 ballsSortedByColor.add(currentBall);
             }
         }
