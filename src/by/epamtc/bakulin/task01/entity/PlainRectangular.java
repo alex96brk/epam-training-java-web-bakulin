@@ -20,6 +20,11 @@ public class PlainRectangular {
         this.rectangularSquare = rectangularSquare;
     }
 
+    @Override
+    public String toString() {
+        return String.format("PlainRectangular{rectangularSquare = %.3f}", this.rectangularSquare);
+    }
+
     public double calculateRectangularSide() {
         double rectangularSide = Math.sqrt(this.rectangularSquare);
         return rectangularSide;

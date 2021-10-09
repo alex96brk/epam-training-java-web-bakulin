@@ -22,11 +22,6 @@ public class PlainBall implements Serializable {
 
     public PlainBall() {}
 
-    @Override
-    public String toString() {
-        return String.format("PlainBall{ ballColor = %s, ballDiameter = %.3f(m), ballWeight = %.3f(kg)}", ballColor, ballDiameter, this.calculateBallWeight(this.ballDiameter, BALL_DEFAULT_WALL_THICKNESS, BALL_DEFAULT_DENSITY));
-    }
-
     public String getBallColor() {
         return ballColor;
     }
@@ -44,6 +39,11 @@ public class PlainBall implements Serializable {
     }
 
     @Override
+    public String toString() {
+        return String.format("PlainBall{ ballColor = %s, ballDiameter = %.3f(m)}", ballColor, ballDiameter);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof PlainBall)) return false;
@@ -56,7 +56,7 @@ public class PlainBall implements Serializable {
         return Objects.hash(ballColor, ballDiameter);
     }
 
-    public double getBallWeight() {
+    public double calculateBallWeight() {
         double ballSphereVolume = Math.PI * Math.pow(this.ballDiameter, 3) * (1.0 / 6);
         double ballCavityVolume = Math.PI * Math.pow(this.ballDiameter - 2 * BALL_DEFAULT_WALL_THICKNESS, 3) * (1.0 / 6);
         double ballVolume = ballSphereVolume - ballCavityVolume;

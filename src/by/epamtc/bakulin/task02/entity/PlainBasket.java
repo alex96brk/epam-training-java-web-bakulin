@@ -22,7 +22,7 @@ public class PlainBasket implements Serializable {
         double totalWeight = 0;
         for (int i = 0; i < balls.size(); i++) {
             PlainBall currentBall = balls.get(i);
-            totalWeight += currentBall.getBallWeight();
+            totalWeight += currentBall.calculateBallWeight();
         }
         return totalWeight;
     }

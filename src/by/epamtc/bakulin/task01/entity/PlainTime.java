@@ -41,7 +41,7 @@ public class PlainTime {
 
     @Override
     public String toString() {
-        return String.format("%d:%d:%d", hours, minutes, seconds);
+        return String.format("PlainTime{ hours = %d; minutes = %d; seconds = %d}", hours, minutes, seconds);
     }
 
     @Override
