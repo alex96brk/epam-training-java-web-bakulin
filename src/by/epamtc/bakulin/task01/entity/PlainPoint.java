@@ -42,7 +42,7 @@ public class PlainPoint {
 
     @Override
     public String toString() {
-        return String.format("PlainPoint{ name = %s, x = %.1f, y = %.1f) }", name, x, y);
+        return String.format("PlainPoint{ name = %s; x = %.1f; y = %.1f) }", name, x, y);
     }
 
     @Override
