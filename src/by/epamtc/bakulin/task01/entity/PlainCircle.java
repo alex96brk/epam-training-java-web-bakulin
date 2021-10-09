@@ -2,15 +2,15 @@ package by.epamtc.bakulin.task01.entity;
 
 import java.util.Objects;
 
-public class Circle {
+public class PlainCircle {
 
     private double circleSquare;
 
-    public Circle(double circleSquare) {
+    public PlainCircle(double circleSquare) {
         this.circleSquare = circleSquare;
     }
 
-    public Circle() {
+    public PlainCircle() {
 
     }
 
@@ -31,8 +31,8 @@ public class Circle {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Circle)) return false;
-        Circle circle = (Circle) o;
+        if (!(o instanceof PlainCircle)) return false;
+        PlainCircle circle = (PlainCircle) o;
         return Double.compare(circle.circleSquare, circleSquare) == 0;
     }
 

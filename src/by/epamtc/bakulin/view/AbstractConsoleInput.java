@@ -1,10 +1,10 @@
-package by.epamtc.bakulin.task01.view;
+package by.epamtc.bakulin.view;
 
 import java.util.Scanner;
 
 public abstract class AbstractConsoleInput {
 
-    private static final Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
 
     public static final String ERROR_INCORRECT_VALUE_ENTER = "\t[ERROR]: Incorrect value. Enter: ";
     public static final String ENTER_INTEGER = "\t[enter integer]: %s = ";

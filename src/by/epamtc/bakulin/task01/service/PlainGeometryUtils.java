@@ -1,9 +1,9 @@
 package by.epamtc.bakulin.task01.service;
 
-import by.epamtc.bakulin.task01.entity.Circle;
-import by.epamtc.bakulin.task01.entity.Rectangular;
+import by.epamtc.bakulin.task01.entity.PlainCircle;
+import by.epamtc.bakulin.task01.entity.PlainRectangular;
 
-public class PlainCircleUtils {
+public class PlainGeometryUtils {
 
     /*
      * Задача:
@@ -17,14 +17,14 @@ public class PlainCircleUtils {
      * */
 
     public static double calculateRectangleSquareInCircle(double outerRectangularSquareValue) {
-        Rectangular outerRectangle = new Rectangular(outerRectangularSquareValue);
+        PlainRectangular outerRectangle = new PlainRectangular(outerRectangularSquareValue);
         double outerRectangleSide = outerRectangle.getRectangularSide();
 
-        Circle innerCircle = new Circle(Circle.calculateCircleSquare(outerRectangleSide));
+        PlainCircle innerCircle = new PlainCircle(PlainCircle.calculateCircleSquare(outerRectangleSide));
         double innerCircleDiameter = innerCircle.getCircleDiameter();
 
         double innerRectangleSide = innerCircleDiameter / Math.sqrt(2);
-        Rectangular innerRectangular = new Rectangular(Rectangular.calculateRectangleSquare(innerRectangleSide));
+        PlainRectangular innerRectangular = new PlainRectangular(PlainRectangular.calculateRectangleSquare(innerRectangleSide));
 
         return innerRectangular.getRectangularSquare();
     }

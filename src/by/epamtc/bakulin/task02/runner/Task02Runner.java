@@ -1,6 +1,6 @@
 package by.epamtc.bakulin.task02.runner;
 
-import by.epamtc.bakulin.task01.view.AbstractConsoleInput;
+import by.epamtc.bakulin.view.AbstractConsoleInput;
 import by.epamtc.bakulin.task02.entity.PlainBall;
 import by.epamtc.bakulin.task02.entity.PlainBasket;
 import by.epamtc.bakulin.task02.enums.Color;

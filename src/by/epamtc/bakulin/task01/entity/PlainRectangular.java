@@ -2,11 +2,11 @@ package by.epamtc.bakulin.task01.entity;
 
 import java.util.Objects;
 
-public class Rectangular {
+public class PlainRectangular {
 
     private double rectangularSquare;
 
-    public Rectangular(double rectangularSquare) {
+    public PlainRectangular(double rectangularSquare) {
         this.rectangularSquare = rectangularSquare;
     }
 
@@ -27,8 +27,8 @@ public class Rectangular {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Rectangular)) return false;
-        Rectangular that = (Rectangular) o;
+        if (!(o instanceof PlainRectangular)) return false;
+        PlainRectangular that = (PlainRectangular) o;
         return Double.compare(that.rectangularSquare, rectangularSquare) == 0;
     }
 
