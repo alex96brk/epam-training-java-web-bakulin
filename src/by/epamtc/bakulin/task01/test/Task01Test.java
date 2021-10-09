@@ -109,6 +109,16 @@ public class Task01Test extends AbstractConsoleInput {
     }
 
     @Test
+    public void runTask01_task8_test2() {
+        printConsoleMessage("Task 8: Started... test1");
+        printConsoleMessage("Enter 1 value to calculate function: \nif value >= 3 -> f(value) = -x^2 + 3x + 9 \nif value < 3 -> 1 / (x^3 -6)");
+        double userValue = 5;
+        printConsoleMessage(String.format("input = %.3f", userValue));
+        double result = PlainFunctionUtils.calculateAlgebraPlainFunction(userValue);
+        printConsoleMessage(String.format("Task 8: f(%.3f) = %.3f \n", userValue, result));
+    }
+
+    @Test
     public void runTask01_task9_test1() {
         printConsoleMessage("Task 8: Started... test1");
         printConsoleMessage("Enter circle radius to calculate its square and circumference");
