@@ -11,11 +11,6 @@ public class PlainGeometryUtils {
      *  Во сколько раз площадь вписанного квадрата меньше площади заданного?
      * */
 
-    /*
-     * Задача:
-     * 9. Вычислить длину окружности и площадь круга одного и того же заданного радиуса R.
-     * */
-
     public static double calculateRectangleSquareInCircle(double outerRectangularSquareValue) {
         PlainRectangular outerRectangle = new PlainRectangular(outerRectangularSquareValue);
         double outerRectangleSide = outerRectangle.getRectangularSide();
@@ -28,6 +23,11 @@ public class PlainGeometryUtils {
 
         return innerRectangular.getRectangularSquare();
     }
+
+    /*
+     * Задача:
+     * 9. Вычислить длину окружности и площадь круга одного и того же заданного радиуса R.
+     * */
 
     public static double calculateCircleSquare(double circleRadius) {
         return Math.PI * Math.pow(circleRadius, 2);
