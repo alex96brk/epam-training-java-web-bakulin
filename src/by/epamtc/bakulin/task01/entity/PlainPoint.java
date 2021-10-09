@@ -1,7 +1,5 @@
 package by.epamtc.bakulin.task01.entity;
 
-import by.epamtc.bakulin.task02.entity.PlainBall;
-
 import java.util.Objects;
 
 public class PlainPoint {
@@ -44,7 +42,7 @@ public class PlainPoint {
 
     @Override
     public String toString() {
-        return String.format("%s(%.1f ; %.1f)", name, x, y);
+        return String.format("PlainPoint{ name = %s, x = %.1f, y = %.1f) }", name, x, y);
     }
 
     @Override

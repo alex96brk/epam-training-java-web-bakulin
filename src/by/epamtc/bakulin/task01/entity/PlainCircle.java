@@ -12,11 +12,6 @@ public class PlainCircle {
 
     public PlainCircle() {}
 
-    public double calculateCircleDiameter() {
-        double circleDiameter = Math.sqrt((4 * this.circleSquare) / Math.PI);
-        return circleDiameter;
-    }
-
     public double getCircleSquare() {
         return circleSquare;
     }
@@ -25,10 +20,11 @@ public class PlainCircle {
         this.circleSquare = circleSquare;
     }
 
-    public static double calculateCircleSquare( double circleDiameter) {
-        double circleSquare = (Math.PI * Math.pow(circleDiameter, 2) / 4);
-        return circleSquare;
+    @Override
+    public String toString() {
+        return String.format("PlainCircle{ circleSquare = %f.3}", circleSquare);
     }
+
 
     @Override
     public boolean equals(Object o) {
@@ -41,6 +37,16 @@ public class PlainCircle {
     @Override
     public int hashCode() {
         return Objects.hash(circleSquare);
+    }
+
+    public static double calculateCircleSquare( double circleDiameter) {
+        double circleSquare = (Math.PI * Math.pow(circleDiameter, 2) / 4);
+        return circleSquare;
+    }
+
+    public double calculateCircleDiameter() {
+        double circleDiameter = Math.sqrt((4 * this.circleSquare) / Math.PI);
+        return circleDiameter;
     }
 
 
