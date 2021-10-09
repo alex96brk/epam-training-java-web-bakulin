@@ -38,7 +38,7 @@ public class Task02Runner extends AbstractConsoleInput {
         printConsoleMessage("[Get basket weight]: Finished\n");
 
         //[Comment]: Find All Blue Balls In A Basket
-        List<PlainBall> blue = basket.findBallsByColor("blue");
+        List<PlainBall> blue = basket.findAllBallsByColor("blue");
         printConsoleMessage("[Get all blue balls]: Started");
         for(int i = 0; i < blue.size(); i++) {
             printConsoleMessage(String.format("\t %s", blue.get(i)));

@@ -1,5 +1,7 @@
 package by.epamtc.bakulin.task01.entity;
 
+import by.epamtc.bakulin.task02.entity.PlainBall;
+
 import java.util.Objects;
 
 public class PlainPoint {
@@ -14,6 +16,8 @@ public class PlainPoint {
         this.y = y;
     }
 
+    public PlainPoint() {}
+
     public String getName() {
         return name;
     }
@@ -24,6 +28,18 @@ public class PlainPoint {
 
     public double getY() {
         return y;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
     }
 
     @Override

@@ -13,6 +13,8 @@ public class PlainTime {
         this.seconds = seconds;
     }
 
+    public PlainTime() {}
+
     public long getHours() {
         return hours;
     }
@@ -23,6 +25,18 @@ public class PlainTime {
 
     public long getSeconds() {
         return seconds;
+    }
+
+    public void setHours(long hours) {
+        this.hours = hours;
+    }
+
+    public void setMinutes(long minutes) {
+        this.minutes = minutes;
+    }
+
+    public void setSeconds(long seconds) {
+        this.seconds = seconds;
     }
 
     @Override

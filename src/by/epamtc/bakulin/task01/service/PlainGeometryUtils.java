@@ -13,10 +13,10 @@ public class PlainGeometryUtils {
 
     public static double calculateRectangleSquareInCircle(double outerRectangularSquareValue) {
         PlainRectangular outerRectangle = new PlainRectangular(outerRectangularSquareValue);
-        double outerRectangleSide = outerRectangle.getRectangularSide();
+        double outerRectangleSide = outerRectangle.calculateRectangularSide();
 
         PlainCircle innerCircle = new PlainCircle(PlainCircle.calculateCircleSquare(outerRectangleSide));
-        double innerCircleDiameter = innerCircle.getCircleDiameter();
+        double innerCircleDiameter = innerCircle.calculateCircleDiameter();
 
         double innerRectangleSide = innerCircleDiameter / Math.sqrt(2);
         PlainRectangular innerRectangular = new PlainRectangular(PlainRectangular.calculateRectangleSquare(innerRectangleSide));

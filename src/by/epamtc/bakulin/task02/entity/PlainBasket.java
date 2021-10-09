@@ -8,11 +8,14 @@ public class PlainBasket implements Serializable {
 
     private List<PlainBall> basket = new ArrayList<>();
 
+    public PlainBasket(List<PlainBall> ballsCollection) {
+        this.basket = ballsCollection;
+    }
+
+    public PlainBasket() {}
+
     public List<PlainBall> getBasketContent() {
         return this.basket;
-    }
-    public PlainBall getBall(int index) {
-        return this.basket.get(index);
     }
 
     public static double calculateBallsWeight(List<PlainBall> balls) {
@@ -47,16 +50,15 @@ public class PlainBasket implements Serializable {
         return result;
     }
 
-    public PlainBall removeBall(PlainBall ballToRemove) {
-        this.basket.remove(ballToRemove);
-        return ballToRemove;
+    public PlainBall findBallByIndex(int index) {
+        return this.basket.get(index);
     }
 
-    public List<PlainBall> findBallsByColor(String searchColorParameter) {
+    public List<PlainBall> findAllBallsByColor(String searchColorParameter) {
         List<PlainBall> ballsSortedByColor = new ArrayList<>();
 
         for(int i = 0; i < this.basket.size(); i++) {
-            PlainBall currentBall = getBall(i);
+            PlainBall currentBall = findBallByIndex(i);
 
             if(currentBall.getBallColor().equalsIgnoreCase(searchColorParameter)) {
                 ballsSortedByColor.add(currentBall);
@@ -65,6 +67,9 @@ public class PlainBasket implements Serializable {
         return ballsSortedByColor;
     }
 
-
+    public PlainBall removeBall(PlainBall ballToRemove) {
+        this.basket.remove(ballToRemove);
+        return ballToRemove;
+    }
 
 }

@@ -20,6 +20,8 @@ public class PlainBall implements Serializable {
         this.ballDiameter = ballDiameter;
     }
 
+    public PlainBall() {}
+
     @Override
     public String toString() {
         return String.format("PlainBall{ ballColor = %s, ballDiameter = %.3f(m), ballWeight = %.3f(kg)}", ballColor, ballDiameter, this.calculateBallWeight(this.ballDiameter, BALL_DEFAULT_WALL_THICKNESS, BALL_DEFAULT_DENSITY));
@@ -35,6 +37,10 @@ public class PlainBall implements Serializable {
 
     public void setBallColor(String ballColor) {
         this.ballColor = ballColor;
+    }
+
+    public void setBallDiameter(double ballDiameter) {
+        this.ballDiameter = ballDiameter;
     }
 
     @Override

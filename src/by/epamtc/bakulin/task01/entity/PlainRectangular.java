@@ -10,13 +10,19 @@ public class PlainRectangular {
         this.rectangularSquare = rectangularSquare;
     }
 
-    public double getRectangularSide() {
-        double rectangularSide = Math.sqrt(this.rectangularSquare);
-        return rectangularSide;
-    }
+    public PlainRectangular() {}
 
     public double getRectangularSquare() {
         return rectangularSquare;
+    }
+
+    public void setRectangularSquare(double rectangularSquare) {
+        this.rectangularSquare = rectangularSquare;
+    }
+
+    public double calculateRectangularSide() {
+        double rectangularSide = Math.sqrt(this.rectangularSquare);
+        return rectangularSide;
     }
 
     public static double calculateRectangleSquare(double rectangleSide) {

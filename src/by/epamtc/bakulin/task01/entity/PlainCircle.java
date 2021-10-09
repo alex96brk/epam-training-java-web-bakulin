@@ -10,17 +10,19 @@ public class PlainCircle {
         this.circleSquare = circleSquare;
     }
 
-    public PlainCircle() {
+    public PlainCircle() {}
 
-    }
-
-    public double getCircleDiameter() {
+    public double calculateCircleDiameter() {
         double circleDiameter = Math.sqrt((4 * this.circleSquare) / Math.PI);
         return circleDiameter;
     }
 
     public double getCircleSquare() {
         return circleSquare;
+    }
+
+    public void setCircleSquare(double circleSquare) {
+        this.circleSquare = circleSquare;
     }
 
     public static double calculateCircleSquare( double circleDiameter) {
