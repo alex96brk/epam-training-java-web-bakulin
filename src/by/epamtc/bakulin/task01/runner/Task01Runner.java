@@ -45,8 +45,8 @@ public class Task01Runner extends AbstractConsoleInput {
     public static void runTask01_task2() {
         printConsoleMessage("Task 2: Started...");
         printConsoleMessage("Enter a numeric integer year and month, to calculate days quantity");
-        int userYear = enterInteger("year");
-        int userMonth = enterInteger("month");
+        int userYear = enterPositiveInteger("year");
+        int userMonth = enterPositiveInteger("month");
         int result = PlainTimeUtils.calculateDaysAtLeapYearMonth(userYear, userMonth);
         printConsoleMessage(String.format("Task 2: result = %d \n", result));
     }
@@ -54,7 +54,7 @@ public class Task01Runner extends AbstractConsoleInput {
     public static void runTask01_task3() {
         printConsoleMessage("Task 3: Started...");
         printConsoleMessage("Enter numeric double outer rectangular square, to calculate rectangle inscribed in a circle, which inscribed in first rectangular");
-        double userOuterRectangleSquare = enterDouble("outer rectangle square");
+        double userOuterRectangleSquare = enterPositiveDouble("outer rectangle square");
         double innerRectangleSquare = PlainGeometryUtils.calculateRectangleSquareInCircle(userOuterRectangleSquare);
         printConsoleMessage(String.format("Task 3: result = %.3f \n", innerRectangleSquare));
     }
@@ -79,7 +79,7 @@ public class Task01Runner extends AbstractConsoleInput {
     public static void runTask01_task6() {
         printConsoleMessage("Task 6: Started...");
         printConsoleMessage("Enter 1 long value of seconds to convert it to HH:MM:SS format, where HH - hours, MM - minutes, SS - seconds");
-        long userValue = enterLong("userValue");
+        long userValue = enterPositiveLong("userValue");
         PlainTime time = PlainTimeUtils.convertSeconds(userValue);
         printConsoleMessage(String.format("Task 6: result HH:MM:SS = %s \n", time.toString()));
     }
@@ -117,7 +117,7 @@ public class Task01Runner extends AbstractConsoleInput {
     public static void runTask01_task9() {
         printConsoleMessage("Task 8: Started...");
         printConsoleMessage("Enter circle radius to calculate its square and circumference");
-        double radius = enterDouble("radius");
+        double radius = enterPositiveDouble("radius");
         double circleSquare = PlainGeometryUtils.calculateCircleSquare(radius);
         double circleCircumference = PlainGeometryUtils.calculateСircumference(radius);
         printConsoleMessage(String.format("Task 8: \nsquare = %.3f \ncircumference = %.3f \n", circleSquare, circleCircumference));
