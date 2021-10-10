@@ -40,7 +40,7 @@ public class PlainCircle {
     public int hashCode() {
         int result = 1;
 
-        long circleSquareAsLong = (circleSquare == 0) ? result : Double.doubleToLongBits(circleSquare);
+        long circleSquareAsLong = Double.doubleToLongBits(circleSquare);
         result = 31 * result + (int)(circleSquareAsLong ^ (circleSquareAsLong >>> 32));
         return result;
     }

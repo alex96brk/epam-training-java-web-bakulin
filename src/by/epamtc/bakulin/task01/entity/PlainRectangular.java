@@ -42,14 +42,14 @@ public class PlainRectangular {
         }
 
         PlainRectangular rectangular = (PlainRectangular) obj;
-        return this.rectangularSquare == rectangularSquare;
+        return rectangular.rectangularSquare == rectangularSquare;
     }
 
     @Override
     public int hashCode() {
         int result = 1;
 
-        long rectangularSquareAsLong = (rectangularSquare == 0) ? result : Double.doubleToLongBits(rectangularSquare);
+        long rectangularSquareAsLong = Double.doubleToLongBits(rectangularSquare);
         result = 31 * result + (int)(rectangularSquareAsLong ^ (rectangularSquareAsLong >>> 32));
         return result;
     }

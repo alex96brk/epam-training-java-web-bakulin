@@ -54,7 +54,7 @@ public class PlainPoint {
         }
 
         PlainPoint point = (PlainPoint) obj;
-        return point.x == x && point.y == y;
+        return point.x == x && point.y == y && (point.name == name || (name!= null && name.equals(point.name)) );
     }
 
     @Override
@@ -70,14 +70,4 @@ public class PlainPoint {
         return result;
     }
 
-    public static void main(String[] args) {
-        PlainPoint pointO = new PlainPoint("O",0,0);
-        PlainPoint point1 = new PlainPoint("A",1,1);
-        PlainPoint point2 = new PlainPoint("B",1,1);
-
-        System.out.println(pointO.hashCode());
-        System.out.println(point1.hashCode());
-        System.out.println(point2.hashCode());
-
-    }
 }
