@@ -8,7 +8,7 @@
       * PlainCircle.java -> Сущность ОбычныйКруг
       * PlainPoint.java -> Сущность ОбычнаяТочка(X;Y)
       * PlainRectangular.java -> Сущность ОбычныйПрямоугольник
-      * PlainTime.java -> Сушность ОбычноеВремя
+      * PlainTime.java -> Сущность ОбычноеВремя
     * ../service/.. - данный пакет содержит набор классов, в которых описана логика поставленных задач;
       * PlainFunctionUtils.java -> Task01_8, Task01_10
       * PlainGeometryUtils.java -> Task01_3, Task01_9
