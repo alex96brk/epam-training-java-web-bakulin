@@ -1,7 +1,5 @@
 package by.epamtc.bakulin.task01.entity;
 
-import java.util.Objects;
-
 public class PlainPoint {
 
     private String name;
@@ -61,6 +59,25 @@ public class PlainPoint {
 
     @Override
     public int hashCode() {
-        return Objects.hash(x, y);
+        int result = 1;
+
+        long xAsLong = Double.doubleToLongBits(x);
+        long yAsLong = Double.doubleToLongBits(y);
+
+        result = 31 * result + (int) (xAsLong ^ (xAsLong >>> 32));
+        result = 31 * result + (int) (yAsLong ^ (yAsLong >>> 32));
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        PlainPoint pointO = new PlainPoint("O",0,0);
+        PlainPoint point1 = new PlainPoint("A",1,1);
+        PlainPoint point2 = new PlainPoint("B",1,1);
+
+        System.out.println(pointO.hashCode());
+        System.out.println(point1.hashCode());
+        System.out.println(point2.hashCode());
+
     }
 }

@@ -1,7 +1,5 @@
 package by.epamtc.bakulin.task01.entity;
 
-import java.util.Objects;
-
 public class PlainCircle {
 
     private double circleSquare;
@@ -40,7 +38,11 @@ public class PlainCircle {
 
     @Override
     public int hashCode() {
-        return Objects.hash(circleSquare);
+        int result = 1;
+
+        long circleSquareAsLong = (circleSquare == 0) ? result : Double.doubleToLongBits(circleSquare);
+        result = 31 * result + (int)(circleSquareAsLong ^ (circleSquareAsLong >>> 32));
+        return result;
     }
 
     public static double calculateCircleSquare( double circleDiameter) {
@@ -52,6 +54,5 @@ public class PlainCircle {
         double circleDiameter = Math.sqrt((4 * this.circleSquare) / Math.PI);
         return circleDiameter;
     }
-
 
 }

@@ -1,7 +1,5 @@
 package by.epamtc.bakulin.task01.entity;
 
-import java.util.Objects;
-
 public class PlainRectangular {
 
     private double rectangularSquare;
@@ -49,7 +47,11 @@ public class PlainRectangular {
 
     @Override
     public int hashCode() {
-        return Objects.hash(rectangularSquare);
+        int result = 1;
+
+        long rectangularSquareAsLong = (rectangularSquare == 0) ? result : Double.doubleToLongBits(rectangularSquare);
+        result = 31 * result + (int)(rectangularSquareAsLong ^ (rectangularSquareAsLong >>> 32));
+        return result;
     }
 
 

@@ -1,7 +1,6 @@
 package by.epamtc.bakulin.task02.entity;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class PlainBall implements Serializable {
 
@@ -56,7 +55,12 @@ public class PlainBall implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ballColor, ballDiameter);
+        int result = 1;
+
+        long ballDiameterAsLong = Double.doubleToLongBits(ballDiameter);
+        result = 31 * result + (int)(ballDiameterAsLong ^ (ballDiameterAsLong >>> 32));
+        result = 31 * result + (ballColor == null ? 0 : ballColor.hashCode());
+        return result;
     }
 
     public double calculateBallWeight() {

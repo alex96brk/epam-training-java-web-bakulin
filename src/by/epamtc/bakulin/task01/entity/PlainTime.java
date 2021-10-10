@@ -1,7 +1,5 @@
 package by.epamtc.bakulin.task01.entity;
 
-import java.util.Objects;
-
 public class PlainTime {
     private long hours;
     private long minutes;
@@ -58,6 +56,16 @@ public class PlainTime {
 
     @Override
     public int hashCode() {
-        return Objects.hash(hours, minutes, seconds);
+        int result = 1;
+
+        long hoursAsLong = (hours == 0) ? result : Double.doubleToLongBits(hours);
+        long minutesAsLong = (minutes == 0) ? result : Double.doubleToLongBits(minutes);
+        long secondsAsLong = (seconds == 0) ? result : Double.doubleToLongBits(seconds);
+
+        result = 31 * result + (int)(hoursAsLong ^ (hoursAsLong >>> 32));
+        result = 31 * result + (int)(minutesAsLong ^ (minutesAsLong >>> 32));
+        result = 31 * result * (int)(secondsAsLong ^ (secondsAsLong >>> 32));
+        return result;
     }
+
 }
