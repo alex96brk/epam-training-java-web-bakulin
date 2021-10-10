@@ -46,11 +46,17 @@ public class PlainPoint {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PlainPoint)) return false;
-        PlainPoint that = (PlainPoint) o;
-        return x == that.x && y == that.y;
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+
+        if(obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        PlainPoint point = (PlainPoint) obj;
+        return point.x == x && point.y == y;
     }
 
     @Override

@@ -27,11 +27,15 @@ public class PlainCircle {
 
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PlainCircle)) return false;
-        PlainCircle circle = (PlainCircle) o;
-        return Double.compare(circle.circleSquare, circleSquare) == 0;
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        PlainCircle circle = (PlainCircle) obj;
+        return circle.circleSquare == circleSquare;
     }
 
     @Override

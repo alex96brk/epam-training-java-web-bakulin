@@ -45,11 +45,15 @@ public class PlainTime {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PlainTime)) return false;
-        PlainTime plainDate = (PlainTime) o;
-        return hours == plainDate.hours && minutes == plainDate.minutes && seconds == plainDate.seconds;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        PlainTime plainDate = (PlainTime) obj;
+        return plainDate.hours == hours && plainDate.minutes == minutes && plainDate.seconds == seconds;
     }
 
     @Override

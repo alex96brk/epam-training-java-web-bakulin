@@ -44,11 +44,14 @@ public class PlainBall implements Serializable {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PlainBall)) return false;
-        PlainBall plainBall = (PlainBall) o;
-        return Double.compare(plainBall.ballDiameter, ballDiameter) == 0 && Objects.equals(ballColor, plainBall.ballColor);
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if(obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+        PlainBall plainBall = (PlainBall) obj;
+        return ballDiameter == this.ballDiameter && (ballColor == plainBall.ballColor
+                || (ballColor != null && ballColor.equals(plainBall.getBallColor())));
     }
 
     @Override
