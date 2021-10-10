@@ -66,6 +66,7 @@ public class PlainPoint {
 
         result = 31 * result + (int) (xAsLong ^ (xAsLong >>> 32));
         result = 31 * result + (int) (yAsLong ^ (yAsLong >>> 32));
+        result = 31 * result + ((name == null) ? 0 : name.hashCode());
 
         return result;
     }

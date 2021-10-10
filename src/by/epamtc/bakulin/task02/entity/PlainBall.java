@@ -50,7 +50,7 @@ public class PlainBall implements Serializable {
         }
         PlainBall plainBall = (PlainBall) obj;
         return plainBall.ballDiameter == ballDiameter && ( plainBall.ballColor == ballColor
-                || (ballColor != null && ballColor.equals(plainBall.getBallColor())));
+                || (ballColor != null && ballColor.equals(plainBall.ballColor)));
     }
 
     @Override
