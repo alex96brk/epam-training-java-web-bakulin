@@ -29,6 +29,29 @@ public abstract class AbstractConsoleInput {
         return inputValue;
     }
 
+    public static int enterPositiveInteger(String parameterName) {
+        Integer inputValue = null;
+        printConsoleMessage(ENTER_INTEGER, parameterName);
+
+        do {
+            while (!sc.hasNextInt()) {
+                printConsoleMessage(ERROR_INCORRECT_VALUE_ENTER + "integer");
+                printConsoleMessage(String.format(ENTER_INTEGER, parameterName));
+
+                sc.next();
+            }
+            inputValue = sc.nextInt();
+            if(inputValue < 0) {
+                inputValue = null;
+                printConsoleMessage(ERROR_INCORRECT_VALUE_ENTER + "positive integer");
+                printConsoleMessage(String.format(ENTER_INTEGER, parameterName));
+                continue;
+            }
+
+        } while (inputValue == null);
+        return inputValue;
+    }
+
     public static long enterLong(String parameterName) {
         Long inputValue = null;
         printConsoleMessage(ENTER_LONG, parameterName);
@@ -46,6 +69,29 @@ public abstract class AbstractConsoleInput {
         return inputValue;
     }
 
+    public static long enterPositiveLong(String parameterName) {
+        Long inputValue = null;
+        printConsoleMessage(ENTER_LONG, parameterName);
+
+        do {
+            while (!sc.hasNextInt()) {
+                printConsoleMessage(ERROR_INCORRECT_VALUE_ENTER + "long");
+                printConsoleMessage(String.format(ENTER_LONG, parameterName));
+
+                sc.next();
+            }
+            inputValue = sc.nextLong();
+            if(inputValue < 0) {
+                inputValue = null;
+                printConsoleMessage(ERROR_INCORRECT_VALUE_ENTER + "positive long");
+                printConsoleMessage(String.format(ENTER_LONG, parameterName));
+                continue;
+            }
+
+        } while (inputValue == null);
+        return inputValue;
+    }
+
     public static double enterDouble(String parameterName) {
         Double inputValue = null;
         printConsoleMessage(ENTER_DOUBLE, parameterName);
@@ -58,6 +104,30 @@ public abstract class AbstractConsoleInput {
                 sc.next();
             }
             inputValue = sc.nextDouble();
+
+        } while (inputValue == null);
+        return inputValue;
+    }
+
+    public static double enterPositiveDouble(String parameterName) {
+        Double inputValue = null;
+        printConsoleMessage(ENTER_DOUBLE, parameterName);
+
+        do {
+            while (!sc.hasNextDouble()) {
+                printConsoleMessage(ERROR_INCORRECT_VALUE_ENTER + "double");
+                printConsoleMessage(String.format(ENTER_DOUBLE, parameterName));
+
+                sc.next();
+            }
+            inputValue = sc.nextDouble();
+            if(inputValue < 0) {
+                inputValue = null;
+                printConsoleMessage(ERROR_INCORRECT_VALUE_ENTER + "positive double");
+                printConsoleMessage(String.format(ENTER_DOUBLE, parameterName));
+                continue;
+            }
+
 
         } while (inputValue == null);
         return inputValue;
@@ -125,6 +195,5 @@ public abstract class AbstractConsoleInput {
     public static void close() {
         sc.close();
     }
-
 
 }
